@@ -1,0 +1,49 @@
+<% if @invoice.errors.any? %>
+  <div class="invoice-error">
+    <h5><i class="fa fa-exclamation-circle"></i> Found errors while saving</h5>
+    <ul class="">
+      <% @invoice.errors.full_messages.each do |msg| %>
+        <li class="text-danger"><%= msg %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_with model: @invoice, url: invoices_path, method: :post, class: 'form form--theme-xmas form--simple' do |f| %>
+
+  <table class="new-invoice">
+    <thead>
+      <tr>
+        <th class="new-invoice__header new-invoice__header--sortable">
+          Client Name
+        </th>
+        <th class="new-invoice__header new-invoice__header--sortable">
+          Amount
+        </th>
+        <th class="new-invoice__header new-invoice__header--sortable">
+          Tax
+        </th>
+        <th class="new-invoice__header new-invoice__header--sortable">
+        </th>
+        <th class="new-invoice__header"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="new-invoice__item-tr">
+        <td class="new-invoice__item-td new-invoice__item-td--client-name">
+          <%= f.text_field :client_name, class: "form__input mb-2" %>
+        </td>
+        <td class="new-invoice__item-td">
+          <%= f.number_field :amount, class: "form__input mb-2" %>
+        </td>
+        <td class="new-invoice__item-td">
+          <%= f.number_field :tax, class: "form__input mb-2" %>        
+        </td>
+        <td class="new-invoice__item-td new-invoice__item-td--actions">
+          <%= f.submit :create, class: "form__submit" %>        
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+<% end %>
