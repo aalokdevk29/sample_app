@@ -5,5 +5,6 @@ FactoryBot.define do
     tax { 12 }
     vendor { 'temp1' }
     status { 'draft' }
+    association :invoice
   end
 end
