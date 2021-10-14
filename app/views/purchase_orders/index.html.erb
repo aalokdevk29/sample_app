@@ -1,0 +1,28 @@
+  <h1>Purchase Orders</h1>
+  <table class="purchase-order-table">
+    <thead>
+      <tr>
+        <th class="purchase-order-table__header purchase-order-table__header--sortable">
+          Client Name
+        </th>
+        <th class="purchase-order-table__header purchase-order-table__header--sortable">
+          Amount
+        </th>
+        <th class="purchase-order-table__header purchase-order-table__header--sortable">
+          Tax
+        </th>
+        <th class="purchase-order-table__header purchase-order-table__header--sortable">
+          Vendor
+        </th>
+        <th class="purchase-order-table__header purchase-order-table__header--sortable">
+          Status
+        </th>
+        <th class="purchase-order-table__header purchase-order-table__header--sortable">
+        </th>
+        <th class="purchase-order-table__header"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= render partial: 'purchase_order', collection: @purchase_orders %>
+    </tbody>
+  </table>

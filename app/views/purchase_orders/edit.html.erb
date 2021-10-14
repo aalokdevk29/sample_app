@@ -1,0 +1,30 @@
+<h1>Update Purchase Order</h1>
+<%= render 'shared/errors', object: @purchase_order %>
+<div class="">
+  <%= form_for @purchase_order, url: purchase_order_path(@purchase_order), method: :patch, class: 'form form--theme-xmas form--simple' do |f| %>
+    <div>
+      <div class="form-group">
+        <%= f.label :client_name,  class: 'control-label' %>
+        <%= f.text_field :client_name, class: 'form-control'%>
+      </div>
+      <div class="form-group">
+        <%= f.label :amount, class: 'control-label' %>
+        <%= f.number_field :amount, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :tax, class: 'control-label' %>
+        <%= f.number_field :tax, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :vendor, class: 'control-label' %>
+        <%= f.text_field :vendor, class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :status, class: 'control-label' %>
+        <%= f.select(:status, options_for_select(PurchaseOrder.statuses.keys), {},{ class: 'form-control', prompt: "All" }) %>
+      </div>
+      <p class="text-center">
+        <%= f.submit "Submit", class: "btn btn-success" %>
+      </p>
+  <% end %>
+</div>

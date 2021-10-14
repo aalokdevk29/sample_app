@@ -1,13 +1,5 @@
-<% if @invoice.errors.any? %>
-  <div class="invoice-error">
-    <h5><i class="fa fa-exclamation-circle"></i> Found errors while saving</h5>
-    <ul class="">
-      <% @invoice.errors.full_messages.each do |msg| %>
-        <li class="text-danger"><%= msg %></li>
-      <% end %>
-    </ul>
-  </div>
-<% end %>
+<h1>New Invoice</h1>
+<%= render 'shared/errors', object: @invoice %>
 
 <%= form_with model: @invoice, url: invoices_path, method: :post, class: 'form form--theme-xmas form--simple' do |f| %>
 

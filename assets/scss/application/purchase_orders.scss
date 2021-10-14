@@ -1,11 +1,10 @@
-.invoices-table {
+.purchase-order-table {
   width: 100%;
   border-spacing: 0;
   color: #555;
   background-color: transparent;
 }
-
-.invoices-table__header {
+.purchase-order-table__header {
   @include sm-md {
     background-color: rgba(200, 200, 200, 0.1);
   }
@@ -20,51 +19,29 @@
   font-weight: 600;
 }
 
-.invoices-table__item-td {
+.purchase-order-table__item-td {
   max-width: 300px;
   padding: 10px 20px;
   border-bottom: 1px solid #e3e3e3;
   background: transparent;
 }
 
-.invoices-table__item-td--actions {
+.purchase-order-table__item-td--actions {
   width: 120px;
 }
 
-.invoice-action {
+.purchase-order-action {
   display: inline-block;
   width: 16px;
   height: 16px;
   background-repeat: no-repeat;
   background-position: center;
 }
-.invoice-action--edit-name {
+.purchase-order-action--edit-name {
   background-image: url(/img/icons/edit.svg);
   filter: #0ec0cb;
 }
-.invoice-action--delete {
+.purchase-order-action--delete {
   margin-left: 5px;
   background-image: url(/img/icons/delete.svg);
-}
-.btn {
-  display: inline-block;
-  color: blue;
-}
-.invoice-action__create {
-  margin: 22px;
-}
-.btn--secondary {
-  background-color: #24b0ce;
-  text-align: center;
-  display: inline-block;
-  color: #f5f5f5;
-  width: 134px;
-  height: 35px;
-  padding-top: 7px;
-  font-size: 18px;
-  font-weight: 600;
-}
-.invoice-action--new-purchase-order {
-  margin-left: 5px;
-  background-image: url(/img/icons/purchase_order.png);
 }

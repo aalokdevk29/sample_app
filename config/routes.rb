@@ -7,5 +7,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :purchase_orders
+
   root to: 'invoices#index'
 end
